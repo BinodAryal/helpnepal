@@ -1,0 +1,28 @@
+development:
+  google_apps:
+    client_id: <%= ENV['GAPPS_ID'] %>
+    secret: <%= ENV['GAPPS_SECRET'] %>
+    domain: <%= ENV['GAPPS_DOMAIN'] %>
+  from: "test@example.com"
+  cc: "default@example.com"
+  domain: localhost
+
+test:
+  google_apps:
+    client_id: <%= ENV['GAPPS_ID'] %>
+    secret: <%= ENV['GAPPS_SECRET'] %>
+    domain: <%= ENV['GAPPS_DOMAIN'] %>
+  from: "test@example.com"
+  domain: localhost
+
+production:
+  google_apps:
+    client_id: <%= ENV['GAPPS_ID'] %>
+    secret: <%= ENV['GAPPS_SECRET'] %>
+    domain: <%= ENV['GAPPS_DOMAIN'] %>
+  from: <%= ENV['POSTMARK_FROM'] %>
+  cc: <%= ENV['DEFAULT_CC'] %>
+  postmark:
+    api_key: <%= ENV['POSTMARK_API_KEY'] %>
+  domain: <%= ENV['APP_DOMAIN'] %>
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
